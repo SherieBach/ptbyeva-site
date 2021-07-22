@@ -1,24 +1,50 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <NavBar/>
+    <Home/>
   </div>
 </template>
+<script>
+import Home from "./views/Home";
+import NavBar from '../src/components/Navbar';
 
-<style lang="scss">
-  @import "styles/global";
-  * {
-    background-color: $mainColor;
-    color: $textColor;
+export default {
+  components: {
+    Home,
+    NavBar,
+
   }
+}
+</script>
+<style lang="scss">
+@import "styles/global";
+
+html {
+
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: $textColor;
+  height: 100%;
+  width: auto;
+  perspective: 3px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: auto;
+
 }
 
 #nav {
@@ -34,3 +60,4 @@
   }
 }
 </style>
+

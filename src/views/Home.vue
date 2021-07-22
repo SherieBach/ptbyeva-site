@@ -1,18 +1,48 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <NavBar msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="home">
+        <HomeHero/>
+        <WelcomeBanner/>
+        <WorkoutOffers/>
+<!--        <Carousel/>-->
+        <Contact/>
+    </div>
 </template>
 
 <script>
 
-import NavBar from '../components/Navbar.vue'
+    import HomeHero from '../components/HomeHero'
+/*
+    import Carousel from "../components/Carousel";
+*/
+    import WelcomeBanner from "../components/WelcomeBanner";
+    import WorkoutOffers from "../components/WorkoutOffers";
+    import Contact from "../components/Contact";
+    import Footer from "../components/Footer";
 
-export default {
-  name: 'Home',
-  components: {
-    NavBar
-  }
-}
+
+    export default {
+        name: 'Home',
+        components: {
+            HomeHero,
+           /* Carousel,*/
+            WelcomeBanner,
+            WorkoutOffers,
+            Contact,
+            Footer
+        }
+    }
 </script>
+
+<style lang="scss" scoped>
+
+    @import "../styles/global";
+
+    .home {
+        height: 100vh;
+        width: 100%;
+
+
+    }
+
+</style>
+

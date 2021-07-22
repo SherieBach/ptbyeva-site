@@ -3,9 +3,8 @@ const state = {
     isOpen: false
 };
 const mutations = {
-
-    setIsOpen: (state) => (state.isOpen = state), // sets and defines the state -
-    toggle() { state.isOpen = !state.isOpen; }  // setting the state to true whenever the panel is open with method inside Sidebar component
+    setIsClosed() {state.isOpen = false},
+    toggle() { state.isOpen = !state.isOpen; }  
 };
 
 const actions = {

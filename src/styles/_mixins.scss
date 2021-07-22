@@ -1,6 +1,34 @@
 @import "breakpoints";
 @import "variables";
 
+@mixin slideBeforeH(){
+  opacity: 0;
+  transform: translateX(150px);
+  transition: all 2s ease-out;
+}
+
+@mixin slideEnterH() {
+  opacity: 1;
+  transform: translateX(0px);
+}
+@mixin slideBeforeV(){
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 2s ease-out;
+}
+@mixin slideEnterV() {
+  opacity: 1;
+  transform: translateY(0px);
+}
+@mixin textBeforeV(){
+  clip-path: circle(0%);
+  transform: translate(0, 100%);
+  transition: all 0.5s ease-out;
+}
+@mixin textEnterV() {
+  
+  
+}
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
     @content;
@@ -29,4 +57,23 @@
   @media (min-width: #{$screen-xxl-min}) {
     @content;
   }
+}
+
+@mixin headerCursiveName() {
+  font-family: $fontCursive;
+  color:#d3d3d37d;
+  font-size: 5rem;
+  font-weight: lighter;
+  word-wrap: break-word;
+  letter-spacing: 5px;
+  background-color: transparent;
+}
+
+@mixin headerUppercaseName(){
+  font-size: 2.7rem;
+  font-family: $fontFamMain;
+  text-transform: uppercase;
+  background-color: transparent;
+  word-wrap: break-word;
+  letter-spacing: 6px;
 }

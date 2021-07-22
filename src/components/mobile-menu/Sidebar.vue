@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar">
-        <div class="sidebar-backdrop" @click="closeSidebar" v-if="isPanelOpen"></div>
+        <div class="sidebar-backdrop" v-if="isPanelOpen"></div>
         <transition name="slide">
             <div v-if="isPanelOpen"
                  class="sidebar-panel">
@@ -15,15 +15,9 @@
 
     export default {
         name: 'SideBar',
-        props: ['activeSidebar'],
         computed: {
             isPanelOpen() {
                 return store.state.isOpen; // returns the state to store
-            }
-        },
-        methods: {
-            closeSidebar() {
-                store.mutations.toggle(); // checks the state mutation if the nav is open and toggles
             }
         }
     }
@@ -50,7 +44,7 @@
     }
 
     .sidebar-backdrop {
-        background-color: rgba(255, 235, 199, 0.5);
+        background-color: rgb(33, 29, 24);
         width: auto;
         height: 100vh;
         top: 0;
@@ -60,11 +54,11 @@
 
     .sidebar-panel {
         overflow: hidden;
-        background-color: rgba(255, 235, 199);
+        background-color: $mainColor;
         position: fixed;
         right: 0;
         top: 0;
-        height: 45%;
+        height: 30%;
         z-index: 99;
         width: 100%;
     }

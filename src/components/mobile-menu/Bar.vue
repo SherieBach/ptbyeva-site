@@ -17,9 +17,6 @@
     export default {
         name: 'Bar',
         computed: {
-            ...mapMutations([
-                'setIsOpen'
-            ]),
             isBurgerActive() {
                 return store.state.isOpen;
             }
@@ -57,7 +54,7 @@
     }
 
     .burger-bar {
-        background-color: rgba(255, 235, 199);
+        background-color: $textColor;
         position: absolute;
         top: 50%;
         right: 6px;
