@@ -53,12 +53,10 @@
     }
 
     .sidebar-panel {
-        overflow: hidden;
-        background-color: $mainColor;
+        background-color: $secondaryColor;
         position: fixed;
         right: 0;
         top: 0;
-        height: 30%;
         z-index: 99;
         width: 100%;
     }

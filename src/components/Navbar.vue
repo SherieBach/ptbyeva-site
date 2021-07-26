@@ -1,6 +1,6 @@
 <template>
-  <div class="navigation">
-    <div id="topNav" :class="{ 'nav--hidden': !showNavbar }">
+  <div class="navigation" >
+    <div id="topNav">
       <div class="instaName">
         <span class="instaLogo-name">ptbyeva</span>
       </div>
@@ -31,7 +31,7 @@
         </ul>
       </Sidebar>
     </div>
-    <nav>
+    <nav class="nav">
       <div class="instaName">
         <span class="instaLogo-name">ptbyeva</span>
       </div>
@@ -69,24 +69,16 @@ export default {
   data() {
     return {
       isOpen: false,
-      showNavbar: true,
-      lastScrollPosition: 0
     }
   },
-  mounted() {
-    this.lastScrollPosition = window.pageYOffset
-    document.addEventListener('wheel', (evt) => {
-      store.mutations.setIsClosed();
-      this.onScroll();
-    }, {capture: false, passive: true});
+  beforeMount() {
+    window.addEventListener('scroll', () => {
+      store.mutations.setIsClosed()
+    })
   },
-  /*  destroyed() {
-
-    },*/
-  beforeDestroy() {
-    document.removeEventListener('wheel', () => {
+  destroyed() {
+    window.removeEventListener('scroll', () => {
       this.isOpen = false
-      this.onScroll();
     });
   },
   methods: {
@@ -97,17 +89,6 @@ export default {
     closeSidebar() {
       store.mutations.setIsClosed();
     },
-    onScroll() {
-      console.log('scrolling')
-      if (window.pageYOffset < 0) {
-        return
-      }
-      if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 60) {
-        return
-      }
-      //this.showNavbar = window.pageYOffset < this.lastScrollPosition;
-      this.lastScrollPosition = window.pageYOffset;
-    }
   }
 };
 </script>
@@ -117,15 +98,26 @@ export default {
 
 .navigation {
   font-family: $fontFamMain;
-  background-color: transparent;
+  background-color: $secondaryColor;
   text-transform: uppercase;
   color: $textColor;
+  width: 100%;
 
-  nav {
+
+  .nav {
     display: none !important;
     @include md {
       display: flex !important;
       justify-content: space-between;
+
+      .instaName {
+        color: black;
+
+        .instaLogo-name {
+          color: black;
+        }
+
+      }
     }
 
     .instaName {
@@ -135,10 +127,9 @@ export default {
 
       .instaLogo-name {
         font-size: 2em;
-        font-weight: 600;
+        align-self: start;
         margin: 5px;
         cursor: pointer;
-
 
       }
 
@@ -147,8 +138,11 @@ export default {
     ul {
       list-style: none;
       display: flex;
-      justify-content: flex-end;
-      background-color: transparent;
+      justify-content: space-evenly;
+      width: 500px;
+      margin: 0;
+      align-items: center;
+     // background-color: transparent;
 
 
       li, a {
@@ -158,10 +152,11 @@ export default {
         color: $textColor;
       }
     }
+
   }
 
   #topNav {
-      background-color: transparent;
+    background-color: $secondaryColor;
     @include md {
       display: none !important;
     }
@@ -172,7 +167,6 @@ export default {
     width: 100%;
     text-transform: uppercase;
     height: 60px;
-
 
     .instaName {
       display: flex;

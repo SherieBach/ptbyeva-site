@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div id="home">
         <HomeHero/>
         <WelcomeBanner/>
         <WorkoutOffers/>
@@ -37,11 +37,9 @@
 
     @import "../styles/global";
 
-    .home {
-        height: 100vh;
+    #home {
+        height: 100%;
         width: 100%;
-
-
     }
 
 </style>

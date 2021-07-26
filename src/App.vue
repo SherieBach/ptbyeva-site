@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar/>
+    <NavBar id="nav" :class="{ 'nav-hidden': !showNavbar }"/>
     <Home/>
   </div>
 </template>
@@ -12,15 +12,45 @@ export default {
   components: {
     Home,
     NavBar,
+  },
+  data(){
+    return {
+      showNavbar: true,
+      lastScrollPosition: 0,
+      scrollValue: 0
+    }
+  },
+  beforeMount() {
+    this.lastScrollPosition = window.pageYOffset
+    window.addEventListener('scroll', () => {
+      this.onScroll()
+    })
+  },
+  destroyed() {
+    window.removeEventListener('scroll', () => {
 
+    });
+  },
+  methods: {
+
+    onScroll() {
+      console.log(window.pageYOffset)
+      if (window.pageYOffset < 0) {
+        return
+      }
+      if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 0) {
+        return
+      }
+      this.showNavbar = window.pageYOffset < this.lastScrollPosition
+      this.lastScrollPosition = window.pageYOffset
+    }
   }
-}
+};
 </script>
 <style lang="scss">
 @import "styles/global";
 
 html {
-
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -39,24 +69,23 @@ body {
   text-align: center;
   color: $textColor;
   height: 100%;
-  width: auto;
+  width: 100%;
   perspective: 3px;
-  transform-style: preserve-3d;
-  overflow-x: hidden;
-  overflow-y: auto;
-
 }
 
 #nav {
-  padding: 30px;
+  height: 100%;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 15px rgba(71, 120, 120, 0.5);
+  transform: translate3d(0, 0, 0);
+  transition: 0.1s all ease-out;
+  z-index: 1;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  &.nav-hidden {
+    background-color: $secondaryColor;
+    transform: translate3d(0, -100%, 0);
   }
 }
 </style>
