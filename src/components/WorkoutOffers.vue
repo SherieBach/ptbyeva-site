@@ -71,6 +71,7 @@ export default {
 
     h2 {
       text-transform: uppercase;
+      margin-bottom: 0;
     }
 
     .workoutOffers-columns {
@@ -106,9 +107,9 @@ export default {
       display: flex;
       justify-content: space-around;
       height: 200px;
-      border: $secondaryColor solid 2px;
+      border: $borderColor solid 2px;
       width: 200px;
-      background-color: $subColor;
+      background-color: $secondaryColor;
 
     }
   }

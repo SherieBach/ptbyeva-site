@@ -3,7 +3,12 @@
     <HeroMobileBackground class="heroMobile-component"/>
     <div class="hero-container">
       <!--            <img src="../assets/eva-name.png" class="hero-name"> -->
-      <div class="header-text triangle">
+      <div class="header-text--intro">
+        <p class="header-text--welcome">Välkommen</p>
+        <p> En av de viktigaste aspekterna av träning är skräddarsydd plan för att nå sitt mål. Hos mig får du både
+          online coaching likaväl som fysiskt på ett träningscenter. Boka en samtal idag och låt oss ... </p>
+      </div>
+      <div class="header-text--buttons">
         <button>Boka här</button>
         <button>Få ett personligt träningsplan</button>
       </div>
@@ -34,16 +39,21 @@ export default {
 @import "../styles/global";
 
 #hero {
-
+  background-color: $mainColor;
 
   .heroMobile-component {
     display: block;
+
     @include md {
       display: none;
     }
   }
 
   .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 
     @include md {
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../public/assets/Eva-bilder/eva-screen.png") top no-repeat;
@@ -59,10 +69,12 @@ export default {
     }
 
 
-    .header-text {
-      background-color:$mainColor;
+    .header-text--buttons {
+      background-color: $mainColor;
+      display: flex;
+      flex-direction: column;
       @include md {
-        background-color:transparent;
+        background-color: transparent;
         position: absolute;
         top: 0;
         left: 0;
@@ -107,7 +119,18 @@ export default {
         color: white;
         transform: scale(1.1);
       }
+    }
 
+    .header-text--intro {
+      width: 200px;
+      height: 100%;
+      text-align: left;
+    }
+
+    .header-text--welcome {
+      text-align: center;
+      font-size: 32px;
+      text-transform:uppercase;
 
     }
 
