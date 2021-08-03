@@ -13,7 +13,7 @@ export default {
     Home,
     NavBar,
   },
-  data(){
+  data() {
     return {
       showNavbar: true,
       lastScrollPosition: 0,
@@ -51,6 +51,7 @@ export default {
 @import "styles/global";
 
 html {
+  height: 100%;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -58,6 +59,7 @@ html {
 }
 
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -70,13 +72,12 @@ body {
   color: $textColor;
   height: 100%;
   width: 100%;
-  perspective: 3px;
 }
 
 #nav {
-  height: 100%;
+  height: 60px;
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
   box-shadow: 0 2px 15px rgba(71, 120, 120, 0.5);
   transform: translate3d(0, 0, 0);
@@ -84,7 +85,6 @@ body {
   z-index: 1;
 
   &.nav-hidden {
-    background-color: $secondaryColor;
     transform: translate3d(0, -100%, 0);
   }
 }
