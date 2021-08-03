@@ -41,7 +41,7 @@
 
         methods: {
             startSlide() {
-                this.timer = setInterval(this.next, 4500);
+                this.timer = setInterval(this.next, 45500);
             },
 
             next() {
@@ -66,15 +66,18 @@
     .carousel {
         position: relative;
         padding-bottom: 80px;
-        margin:25px 0 25px 0;
-        height: 40vh;
+        height: 50vh;
         z-index: 999;
         display: block;
         font-family: $fontFamMain;
         text-transform: uppercase;
+        background-color: $secondaryColor;
         @include md {
            // display: none;
         }
+      h1{
+        margin-top:0;
+      }
 
         .carousel-container {
             // position: absolute;

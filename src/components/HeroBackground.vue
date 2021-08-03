@@ -6,7 +6,8 @@
       <div class="header-text">
         <div class="header-text--intro">
           <p class="header-text--welcome">Välkommen</p>
-          <p> En av de viktigaste aspekterna av träning är skräddarsydd plan för att nå sitt mål. Hos mig får du både
+          <p class="header-text--description"> En av de viktigaste aspekterna av träning är skräddarsydd plan för att nå
+            sitt mål. Hos mig får du både
             online coaching likaväl som fysiskt på ett träningscenter. Boka en samtal idag och låt oss ... </p>
         </div>
         <div class="header-text--buttons">
@@ -42,7 +43,7 @@ export default {
 
 #hero {
   background-color: $mainColor;
-
+  height: 120vh;
 
   .heroMobile-component {
     display: block;
@@ -57,6 +58,7 @@ export default {
     flex-direction: column;
     position: relative;
     align-items: center;
+    height: 100%;
 
     @include md {
       background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../public/assets/Eva-bilder/Eva-rope_lg.jpg") top no-repeat;
@@ -80,8 +82,6 @@ export default {
       }
 
       .header-text--intro {
-        width: 200px;
-        height: 100%;
         text-align: left;
         @include md {
           color: white;
@@ -96,6 +96,10 @@ export default {
           text-transform: uppercase;
         }
 
+        .header-text--description {
+          width: 250px;
+        }
+
         .hero-mobileImage {
           align-self: flex-end;
           border: solid 1px black;
@@ -107,7 +111,11 @@ export default {
       .header-text--buttons {
         background-color: $mainColor;
         display: flex;
+        height: 50%;
+        justify-content: space-evenly;
         flex-direction: column;
+        align-items: center;
+
         @include md {
           background-color: transparent;
           font-family: $fontFamBread;
@@ -128,19 +136,21 @@ export default {
           height: auto;
           padding: 5px;
           border-radius: 5px;
-          margin: 15px 0 15px 20px;
+
           font-family: $fontFamBread;
           text-transform: uppercase;
           letter-spacing: 2.5px;
           font-weight: bold;
           line-height: 1.6;
           color: #000;
-          background-color: white;
+          background-color: $secondaryColor;
           border: none;
           box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
           transition: all 0.3s ease 0s;
           cursor: pointer;
           outline: none;
+          @include md {
+          }
 
         }
 

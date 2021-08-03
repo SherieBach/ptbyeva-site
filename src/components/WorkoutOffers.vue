@@ -53,7 +53,7 @@ export default {
 
 #workoutOffers {
   width: 100vw;
-  background-color: $mainColor;
+  background: $mainColor linear-gradient(180deg, rgba(255, 255, 255, 1) 80%, rgba(205,164,164,1) 100%);
 
 
   h1 {
@@ -110,6 +110,7 @@ export default {
       border: $borderColor solid 2px;
       width: 200px;
       background-color: $secondaryColor;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 
     }
   }

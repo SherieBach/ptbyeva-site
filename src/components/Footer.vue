@@ -18,6 +18,5 @@
     //height: 20vh;
     width: 100%;
     display: flex;
-    background-color: aqua;
 }
 </style>
