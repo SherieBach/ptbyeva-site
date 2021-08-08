@@ -1,30 +1,33 @@
 <template>
   <div id="home">
-    <HomeHero/>
-    <WelcomeBanner/>
+    <HeroBackground />
+    <WelcomeBanner />
     <WorkoutOffers/>
-    <Carousel/>
-    <Footer/>
+    <About/>
+    <InstagramGrid/>
+<!--    <Footer/> -->
   </div>
 </template>
 
 <script>
 
-import HomeHero from '../components/HomeHero'
-import Carousel from "../components/Carousel";
-import WelcomeBanner from "../components/WelcomeBanner";
+import About from "@/components/About";
 import WorkoutOffers from "../components/WorkoutOffers";
 import Footer from "../components/Footer";
+import InstagramGrid from "@/components/InstagramGrid";
+import WelcomeBanner from "@/components/WelcomeBanner";
+import HeroBackground from "@/components/HeroBackground";
 
 
 export default {
   name: 'Home',
   components: {
-    HomeHero,
-    Carousel,
+    HeroBackground,
     WelcomeBanner,
+    InstagramGrid,
+    About,
     WorkoutOffers,
-    Footer
+    // Footer
   }
 }
 </script>

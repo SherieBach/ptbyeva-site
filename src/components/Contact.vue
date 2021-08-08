@@ -18,7 +18,7 @@
     @import "../styles/global";
 
     #contact {
-        background-color: $secondaryColor;
+        background-color: $mainColor;
         width: 100%;
         font-family: $fontFamMain;
         text-transform: uppercase;

@@ -70,8 +70,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $textColor;
-  height: 100%;
-  width: 100%;
 }
 
 #nav {

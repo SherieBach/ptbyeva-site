@@ -1,13 +1,13 @@
 <template>
   <div id="workoutOffers">
-    <h1>Personlig träning i ditt hem eller i träningslokalen.</h1>
+    <h2>Mina tjänster</h2>
     <div v-scrollanimation class="workoutOffers-container">
       <div class="workoutOffers-columns">
         <div class="offer-box1 col">
           <img src="../../public/assets/logos/bar.svg">
         </div>
         <div class="workoutOffers-text-wrap">
-          <h2>träningsplan</h2>
+          <h3>träningsplan</h3>
           <p class="content">Styrka och mobilitet, fokus teknik</p>
         </div>
       </div>
@@ -16,7 +16,7 @@
           <img src="../../public/assets/logos/Deal.svg">
         </div>
         <div class="workoutOffers-text-wrap">
-          <h2>en & en</h2>
+          <h3>personlig</h3>
           <p class="content">Tillsammans följer jag dig i din utveckling</p>
         </div>
       </div>
@@ -25,7 +25,7 @@
           <img src="../../public/assets/logos/Peeps.svg">
         </div>
         <div class="workoutOffers-text-wrap">
-          <h2>gruppträning</h2>
+          <h3>gruppträning</h3>
           <p class="content">Ta med en kompis eller kollegorna</p>
         </div>
       </div>
@@ -34,7 +34,7 @@
           <img src="../../public/assets/logos/KBthick.svg">
         </div>
         <div class="workoutOffers-text-wrap">
-          <h2>hemmaträning</h2>
+          <h3>hemmaträning</h3>
           <p class="content">Enkla anpassade övningar i hemmet</p>
         </div>
       </div>
@@ -53,21 +53,53 @@ export default {
 
 #workoutOffers {
   width: 100vw;
-  background: $mainColor linear-gradient(180deg, rgba(255, 255, 255, 1) 80%, rgba(205,164,164,1) 100%);
+  background: $mainColor;
 
+  @include md {
+    background: $mainColor;
 
-  h1 {
+  }
+
+  h2 {
+   margin-bottom: 50px;
+  }
+
+  h2, h3 {
     font-family: $fontFamMain;
     text-transform: uppercase;
-    padding: 20px;
-    margin: auto;
+    padding: 20px 0 0;
+  }
+
+  h2:before,
+  h2:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 15%;
+
+    @include md {
+      width: 30%;
+    }
+  }
+
+  h2:before {
+    right: 0.2em;
+    margin-left: -50%;
+  }
+
+  h2:after {
+    left: 0.2em;
+    margin-right: -50%;
   }
 
   .workoutOffers-container {
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: space-around;
-    padding: 25px;
+    padding: 60px 20px;
 
     h2 {
       text-transform: uppercase;
@@ -108,6 +140,7 @@ export default {
       justify-content: space-around;
       height: 200px;
       border: $borderColor solid 2px;
+      border-radius: 50%;
       width: 200px;
       background-color: $secondaryColor;
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);

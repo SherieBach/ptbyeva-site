@@ -1,6 +1,8 @@
 <template>
   <div class="welcomeBanner">
-    <h1>what i do</h1>
+    <div class="inspo-text">
+      <img src="../assets/text-.png">
+    </div>
   </div>
 </template>
 
@@ -17,42 +19,21 @@ export default {
 @import "../styles/global";
 
 .welcomeBanner {
+  display: none;
   background-color: $mainColor;
-  padding: 40px 20px 70px 20px;
+  padding: 90px 0;
 
   @include md {
-
-
+    margin: auto;
+    display: flex;
+    justify-content: center;
   }
-    h1 {
-    color: $textColor;
-    font-family: $fontFamMain;
-      overflow: hidden;
-      text-align: center;
-      text-transform: uppercase;
 
+  .inspo-text {
+    img {
+      width: 800px;
     }
-
-    h1:before,
-    h1:after {
-      background-color: #000;
-      content: "";
-      display: inline-block;
-      height: 1px;
-      position: relative;
-      vertical-align: middle;
-      width: 50%;
-    }
-
-    h1:before {
-      right: 0.5em;
-      margin-left: -50%;
-    }
-
-    h1:after {
-      left: 0.5em;
-      margin-right: -50%;
-    }
+  }
 }
 
 </style>

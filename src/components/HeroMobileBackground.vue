@@ -19,7 +19,7 @@ export default {
 
     #heroMobile {
             position: relative;
-            background-image: url('../../public/assets/Eva-bilder/Eva-rope_.jpg');
+            background-image: url('../../public/assets/Eva-bilder/eva-sprint.jpeg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top;

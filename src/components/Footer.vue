@@ -15,7 +15,7 @@
 </script>
 <style scoped lang="scss">
 #footer {
-    //height: 20vh;
+    height: 20vh;
     width: 100%;
     display: flex;
 }

@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import ScrollAnimation from "./directives/ScrollAnimation";
-import '@babel/polyfill'
+import '@babel/polyfill';
 
 Vue.directive('scrollanimation', ScrollAnimation);
 

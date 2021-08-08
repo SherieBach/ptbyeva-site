@@ -109,7 +109,7 @@ export default {
     @include md {
       display: flex !important;
       justify-content: space-between;
-
+      width: 100%;
       .instaName {
         color: black;
 
