@@ -1,6 +1,11 @@
 <template>
   <div class="image-grid">
-    <h1>hitta mig på instagram</h1>
+    <div class="insta-name">
+      <h1>PTBYEVA</h1>
+      <div class="insta-logo">
+        <img src="../../public/assets/logos/insta-b.png" alt="instagram logo in black">
+      </div>
+    </div>
     <div class="row">
       <div class="img img-1"></div>
       <div class="img img-2"></div>
@@ -32,12 +37,20 @@ export default {
     align-items: center;
   }
 
-  h1 {
-    margin-top: 0;
-    font-family: $fontFamBread;
-    text-transform: uppercase ;
-  }
+  .insta-name {
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    h1 {
+      margin: 0;
+      font-family: $fontFamBread;
+      text-transform: uppercase;
+    }
+    .insta-logo {
 
+    }
+  }
   .row {
     width: 100%;
     height: 100%;
@@ -49,6 +62,7 @@ export default {
   }
 
   .img {
+    cursor: pointer;
     min-height: 250px;
     min-width: 250px;
     margin: 10px;
@@ -87,58 +101,11 @@ export default {
     background: url('../../public/assets/Eva-bilder/eva-insta.png') no-repeat center center;
     background-size: cover;
   }
+
   .img-6 {
     background: url('../../public/assets/Eva-bilder/eva-sportamore.jpeg') no-repeat center center;
     background-size: cover;
 
   }
-
-  /*.carousel-container {
-      // position: absolute;
-      // bottom: -100px;
-      // left: 9%;
-      display: flex;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-
-      .img-container {
-          margin-right: 60px;
-
-          img {
-              width: auto;
-              height: 250px;
-
-          }
-
-      }
-  }
-}
-
-.carousel-container_2 {
-  height: 30vh;
-
-
-  .fade-enter-active,
-  .fade-leave-active {
-      transition: all 0.9s ease;
-      overflow: hidden;
-      visibility: visible;
-      position: absolute;
-      width: 100%;
-      opacity: 1;
-  }
-
-  .fade-enter,
-  .fade-leave-to {
-      visibility: hidden;
-      width: 100%;
-      opacity: 0;
-  }
-
-  img {
-      height: 400px;
-      padding: 10px;
-  }
-*/
 }
 </style>

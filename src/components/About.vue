@@ -34,7 +34,7 @@ export default {
 
   @include md {
     background-color: $mainColor;
-    height: 85vh;
+    height: 100%;
   }
 
   h2 {

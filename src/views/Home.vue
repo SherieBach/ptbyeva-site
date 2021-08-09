@@ -1,11 +1,10 @@
 <template>
   <div id="home">
-    <HeroBackground />
-    <WelcomeBanner />
+    <HeroBackground/>
+    <WelcomeBanner/>
     <WorkoutOffers/>
     <About/>
     <InstagramGrid/>
-<!--    <Footer/> -->
   </div>
 </template>
 
@@ -13,7 +12,6 @@
 
 import About from "@/components/About";
 import WorkoutOffers from "../components/WorkoutOffers";
-import Footer from "../components/Footer";
 import InstagramGrid from "@/components/InstagramGrid";
 import WelcomeBanner from "@/components/WelcomeBanner";
 import HeroBackground from "@/components/HeroBackground";
@@ -27,7 +25,6 @@ export default {
     InstagramGrid,
     About,
     WorkoutOffers,
-    // Footer
   }
 }
 </script>

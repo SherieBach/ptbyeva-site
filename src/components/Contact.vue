@@ -3,7 +3,7 @@
         <div class="contact-container">
             <h3>Kontakta mig</h3>
             <span>
-                <a href="mailto:someone@yoursite.com">EVA SJÖHOLM</a> <!--todo: skriva in Evas mail-->
+                <a href="mailto:someone@yoursite.com">EVA SJÖHOLM</a>
             </span>
         </div>
     </div>
