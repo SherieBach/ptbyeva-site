@@ -63,7 +63,7 @@ export default {
     height: auto;
 
     @include md {
-      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../public/assets/Eva-bilder/eva-sprint.jpeg") top no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../public/assets/Eva-bilder/eva-sprint.jpeg") center no-repeat;
       background-size: cover;
       height: 100vh;
       max-height: 100vh;
